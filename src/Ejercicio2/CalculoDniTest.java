@@ -52,14 +52,24 @@ class CalculoDniTest {
 	}
 	
 	@Test
-	void testLongitud() {
+	void testvalidarTamano() {
 		InsertarDni();
 		
-		//System.out.println(this.dni.size());
 		for (int i=0;i<this.dni.size();i++) {
-			//System.out.println(this.dni.get(i));
+			
 			assertEquals(9, validarDni.longitud(this.dni.get(i)));
 			
+		}
+	}
+	
+	@Test
+	void testvalidarNumeroDni() {
+		InsertarDni();
+		
+		for (int i=0;i<this.dni.size();i++) {
+			
+			assertEquals(true, validarDni.validarNumeroDni(this.dni.get(i)));
+				
 		}
 	}
 	
@@ -69,8 +79,20 @@ class CalculoDniTest {
 		InsertarLetraDni();
 		
 		for (int i=0;i<this.dni.size();i++) {
-			//System.out.println(validarDni.ultimaLetraDni(this.dni.get(i)));
+			
 			assertEquals(this.letra.get(i), validarDni.ultimaLetraDni(this.dni.get(i)));
+			
+		}
+	}	
+	
+	@Test
+	void esDnivalido() {
+		InsertarDni();
+		InsertarLetraDni();
+		
+		for (int i=0;i<this.dni.size();i++) {
+		
+			assertEquals(true, validarDni.esDnivalido(this.dni.get(i)));
 			
 		}
 	}	
