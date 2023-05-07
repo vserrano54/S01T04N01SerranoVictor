@@ -8,7 +8,7 @@ public class MonthList {
 	ArrayList<Month> lista = new ArrayList<Month>();
 	
 	public MonthList() {
-		
+		insertarMeses();
 	}
 	
 	

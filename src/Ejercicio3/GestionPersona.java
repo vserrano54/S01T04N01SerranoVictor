@@ -6,6 +6,10 @@ public class GestionPersona {
 	
 	ArrayList<Persona> persona = new ArrayList<Persona>();
 	
+	public GestionPersona() {
+		ingresarPersona();
+	}
+	
 	public  ArrayList<Persona> ingresarPersona() {
 		
 		persona.add(new Persona(1,"Jose", "Lopez", "M",20,"Nicaraguense"));
@@ -21,10 +25,10 @@ public class GestionPersona {
 	public  boolean validarPosicion(int posicion) {
 		
 		if (posicion < 0) {
-			throw new IndexOutOfBoundsException("Posición " + posicion +" esta fuera de rango, la posicion es negativa");
+			throw new IndexOutOfBoundsException("Posición " + posicion +" esta fuera de rango");
 		}
-		else if (posicion > persona.size()) {
-			throw new IndexOutOfBoundsException("Posición " + posicion +" esta fuera de rango, la posicion es superior al tamaño de la lista");
+		else if (posicion > persona.size()-1) {
+			throw new IndexOutOfBoundsException("Posición " + posicion +" esta fuera de rango");
 		}
 		
 		return true;
